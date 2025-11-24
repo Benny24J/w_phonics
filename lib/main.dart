@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.amberAccent),
         primaryColor: Colors.amberAccent.shade400,
+        scaffoldBackgroundColor: Colors.grey.shade200,
         textTheme: TextTheme(
           headlineMedium: TextStyle(color: Colors.white),
           headlineSmall: TextStyle(color: Colors.white),

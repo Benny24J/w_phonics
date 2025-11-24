@@ -49,9 +49,7 @@ class AgreementWIdget extends StatelessWidget {
             Checkbox(
               value: false,
               onChanged: (value) {},
-              checkColor: Colors.white,
-              activeColor: Colors.white,
-              focusColor: Colors.white,
+              
             ),
             Text("SELECT ALL"),
           ],

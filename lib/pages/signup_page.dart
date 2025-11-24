@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:w_phonics/pages/home_page.dart';
 import 'package:w_phonics/widgets/custom_textfield.dart';
 import 'package:w_phonics/widgets/password_textfield.dart';
 import 'package:w_phonics/widgets/signup_section.dart';
@@ -28,11 +29,21 @@ class _SignupPageState extends State<SignupPage> {
               width: 250,
               height: 250,
             ),
-            if(currentPageIndex == 0)SignupSection(),
-            if(currentPageIndex == 1 ) TypeOfUserSelectionSection(
-              options: ["Guardian", "Tutor", "Teacher", "Other"],
-              onSelect: (selectedItems) => print(selectedItems),
-            ),
+            if (currentPageIndex == 0) SignupSection(),
+            if (currentPageIndex == 1)
+              TypeOfUserSelectionSection(
+                key: Key("grid1"),
+                options: ["Guardian", "Tutor", "Teacher", "Other"],
+                onSelect: (selectedItems) => print(selectedItems),
+              ),
+            if (currentPageIndex == 2)
+              TypeOfUserSelectionSection(
+                key: Key("grid2"),
+                options: ["0-3", "3-5", "5-8", "8+"],
+                onSelect: (listOfSelection) {
+                  print(listOfSelection);
+                },
+              ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 fixedSize: Size.fromWidth(
@@ -40,10 +51,21 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
               onPressed: () {
-                //increment current page index
-                setState(() {
-                  currentPageIndex++;
-                });
+                if (currentPageIndex == 2) {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return HomePage();
+                      },
+                    ),
+                  );
+                } else {
+                  //increment current page index
+                  setState(() {
+                    currentPageIndex++;
+                  });
+                }
               },
               child: Text("Next"),
             ),
