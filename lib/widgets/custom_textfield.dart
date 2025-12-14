@@ -39,6 +39,9 @@ class CustomTextField extends StatelessWidget {
         
       ),
       cursorColor: Colors.white,
+      style: const TextStyle(
+        color: Colors.white,
+      ),
       
     );
   }

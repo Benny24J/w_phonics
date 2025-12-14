@@ -11,3 +11,10 @@ abstract class Env {
     static String supabasePubKey = _Env.supabasePubKey;
     
 }
+
+
+
+
+
+
+
